@@ -41,11 +41,12 @@ end
 
 % logスケールで一枚
 for r = 1:3
-    figure('Position', [100, 100, 1300, 1000])
+    figure
     hold on
-    title("r = " + num2str(r), 'FontSize', 24)
 
     % 10回計算
+    P_list = [];
+
     for i = 1:10
         P(1) = 10;
 
@@ -57,11 +58,14 @@ for r = 1:3
         end
 
         % 常用対数
-        % 点線見づらいから薄くすると良いかも？
-        plot(t, log10(P), 'LineStyle', '--', 'LineWidth', 3)
-        grid on
-        set(gca, 'FontSize', 18)
+        P_list = [P_list; P];
+        plot(t, log10(P), 'LineWidth', 3, 'HandleVisibility', 'off')
     end
+
+    xlabel('Time [s]')
+    ylabel('log10(P)', 'Interpreter', 'latex')
+    grid on
+    set(gca, 'FontSize', 24)
 
     % Pの平均
 end

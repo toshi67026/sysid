@@ -48,7 +48,7 @@ n = 5;
 kappa = 3 - n;
 xest = [ones(4, 1) / 2; 10];
 % Sigmaポイントの初期共分散？
-P = 1e-2 * eye(5);
+P = blkdiag(1e-2 * eye(4), 1);
 
 for i = 1:length(t) - 1
     [hat_x_k1_k1, P_k1_k1] = calc_ukf(xest(:, end), P, y(i)');

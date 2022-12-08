@@ -39,6 +39,8 @@ hold on
 x_ee = a1 * cos(x(1, :)) + a2 * cos(x(1, :) + x(2, :));
 y_ee = a1 * sin(x(1, :)) + a2 * sin(x(1, :) + x(2, :));
 plot(x_ee, y_ee, 'LineWidth', 3, 'DisplayName', 'ee')
+xlabel('x')
+ylabel('y')
 grid on
 box on
 axis equal
@@ -51,7 +53,7 @@ y = y_ee + wgn(1, length(t), -40);
 global n kappa
 n = 4;
 kappa = 3 - n;
-xest = ones(4, 1) / 2;
+xest = x0 - ones(4, 1)/ 4;
 % Sigmaポイントの初期共分散？
 P = 1e-2 * eye(4);
 

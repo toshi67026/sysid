@@ -43,11 +43,13 @@ set(gca, 'FontSize', 24)
 % 白色ノイズを付加した場合
 y = y_ee + wgn(1, length(t), -40);
 
+
+xest0 = x0 - ones(4, 1)/ 4;
 % UKF
 global n kappa
 n = 4;
 kappa = 3 - n;
-xest_ukf = ones(4, 1) / 2;
+xest_ukf = xest0;
 % Sigmaポイントの初期共分散？
 P = 1e-2 * eye(4);
 
@@ -57,9 +59,9 @@ for i = 1:length(t) - 1
     P = P_k1_k1;
 end
 
-%{
 % EKF
-xest_ekf = ones(4, 1) / 2;
+%{
+xest_ekf = xest0;
 % Sigmaポイントの初期共分散？
 P = 1e-2 * eye(4);
 
@@ -117,7 +119,7 @@ set(gca, 'FontSize', 24)
 %}
 
 % PF
-xest_pf = ones(4, 1) / 2;
+xest_pf = xest0;
 % Sigmaポイントの初期共分散？
 P = 1e-2 * eye(4);
 pf = stateEstimatorPF;

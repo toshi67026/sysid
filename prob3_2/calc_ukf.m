@@ -55,7 +55,6 @@ function [hat_x_k1_k1, P_k1_k1] = calk_ukf(x, P, y)
     end
 
     %% Step 4
-    % この0.01何？
     % これらはk+1|k
     P_vv = 0.01 ^ 2 + P_yy;
     P_xv = zeros(n, 1);

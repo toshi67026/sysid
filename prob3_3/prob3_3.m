@@ -50,7 +50,7 @@ global n kappa
 n = 4;
 kappa = 3 - n;
 xest_ukf = xest0;
-% Sigmaポイントの初期共分散？
+% Sigmaポイントの初期共分散
 P = 1e-2 * eye(4);
 
 for i = 1:length(t) - 1
@@ -120,7 +120,7 @@ set(gca, 'FontSize', 24)
 
 % PF
 xest_pf = xest0;
-% Sigmaポイントの初期共分散？
+% Sigmaポイントの初期共分散
 P = 1e-2 * eye(4);
 pf = stateEstimatorPF;
 initialize(pf, 100, x0, P);

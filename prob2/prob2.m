@@ -66,6 +66,4 @@ for r = 1:3
     ylabel('log10(P)', 'Interpreter', 'latex')
     grid on
     set(gca, 'FontSize', 24)
-
-    % Pの平均
 end

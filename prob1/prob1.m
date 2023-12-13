@@ -96,7 +96,6 @@ plot(x, 'LineStyle', 'none', 'LineWidth', 3, 'Marker', 'o', 'MarkerSize', 10, 'D
 plot(hat_x_2, 'LineStyle', 'none', 'LineWidth', 3, 'Marker', 'o', 'MarkerSize', 10, 'DisplayName', '(2)')
 plot(hat_x_3, 'LineStyle', 'none', 'LineWidth', 3, 'Marker', 'o', 'MarkerSize', 10, 'DisplayName', '(3)')
 yline(mu(1), 'LineWidth', 3, 'DisplayName', '\mu_x')
-% xlim([0, 10])
 lgd = legend('Location', 'southeast');
 lgd.NumColumns = 2;
 xlabel('$i$', 'Interpreter', 'latex')

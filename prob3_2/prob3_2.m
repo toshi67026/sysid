@@ -47,7 +47,7 @@ global n kappa
 n = 5;
 kappa = 3 - n;
 xest = [ones(4, 1) / 2; 10];
-% Sigmaポイントの初期共分散？
+% Sigmaポイントの初期共分散
 P = blkdiag(1e-2 * eye(4), 1);
 
 for i = 1:length(t) - 1

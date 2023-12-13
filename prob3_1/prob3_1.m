@@ -54,7 +54,7 @@ global n kappa
 n = 4;
 kappa = 3 - n;
 xest = x0 - ones(4, 1)/ 4;
-% Sigmaポイントの初期共分散？
+% Sigmaポイントの初期共分散
 P = 1e-2 * eye(4);
 
 for i = 1:length(t) - 1
